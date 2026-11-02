@@ -1,0 +1,30 @@
+# Sample footage, examples and brand files (media)
+Example Projects/
+
+# Media files anywhere
+*.mov
+*.MOV
+*.mp4
+*.MP4
+*.m4v
+*.mkv
+*.webm
+*.wav
+*.WAV
+*.mp3
+*.m4a
+*.aac
+*.aiff
+*.flac
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.screenstudio/
+
+# Not part of the lessons: notes about the author's own machine
+reference-pipeline-protected.md
+
+# macOS
+.DS_Store
