@@ -12,14 +12,21 @@ Point it at a video folder and Claude runs every step, makes the editing decisio
 
 🎬 At the end: a **brand-new video**, edited with one command. That's the proof you've built a real pipeline and not a one-off edit.
 
-⏱ About 30 minutes, plus the time the edit takes to run.
+⏱ About 30 minutes of your time, plus about 45 minutes while `/produce` edits the video on its own.
 
 ---
 
 ## Before you start
 
 - Lessons 1–6 are done.
-- **A second video folder:** `projects/02-<name>/`, set up exactly like `01-sample` (main-roll, b-roll, audio, plan.md). Use the second video from the sample pack, or record a new one yourself.
+- **A second video folder:** `projects/02-<name>/`, set up exactly like `01-sample`:
+  - `main-roll/`: your camera footage
+  - `audio/`: your microphone recording (if it's separate)
+  - `b-roll/`: your screen recordings, as video files
+  - `extras/`: anything else, such as Screen Studio project folders
+  - `plan.md` (optional): copy `projects/_plan-template.md` and fill in what you know
+
+  Use the second video from the sample pack, or record a new one yourself. The sample pack's second video comes as loose files, so sort them into these folders in Finder (File Explorer on Windows) first.
 
 Nothing new to install.
 
@@ -78,7 +85,7 @@ one place to update them.
 ```
 
 **Check it worked:**
-1. Close the Claude app and reopen it.
+1. Close the Claude app and reopen it, then click this same chat in the sidebar to carry on in it.
 2. Type `/` in the message box. `produce` should appear in the list.
 3. Ask: *"Check every step and file in the produce skill really exists."* Claude should confirm it all does.
 
@@ -110,7 +117,18 @@ Explain in plain words what you allowed.
 
 (Use your folder's actual name.)
 
-**What you should see:** Claude works through every step on its own. It may ask you a question if a line seems missing or a screen recording isn't in your plan. It finishes with a short report: where the video is, how long it is, and anything to check.
+**What you should see:** Claude first checks the folder. If files are in the wrong place, it stops and tells you which ones to move. Move them, then say *"Done, go ahead."*
+
+Then it works through every step on its own for about 45 minutes. It may ask you a question if a line seems missing or a screen recording isn't in your plan. It finishes with a short report:
+- where the video, project file and subtitles are, how long the video is, and its loudness
+- what's in the video (title, number of graphics, where screen recordings are used)
+- what it checked (e.g. *"all 122 caption highlights land on their exact frame"*)
+- a numbered **Please double-check** list: places it couldn't fix (e.g. your face near the edge of the camera's view), lines it wasn't sure it heard right, two rules that clash (e.g. a long name that's slightly too wide for one caption), and choices it made without a `plan.md`
+- fixes it made to the pipeline itself, logged in `CHANGELOG.md`, so every future video benefits
+
+Answer the double-check items in plain words, e.g. *"1: leave them. 3: split it into two captions."*
+
+> **If it stops with a connection error** (for example *"API Error: Couldn't connect…"*), nothing is lost. Say: *"The connection dropped. Please carry on from where you stopped and finish the whole edit."* It picks up from the last finished step.
 
 **Check it worked:**
 - **Watch the video.** It should look like **the same channel** as `01-sample`: same colour, captions, graphic style, title and end cards, and pacing. And Claude has never seen this footage before.
@@ -124,11 +142,13 @@ Explain in plain words what you allowed.
 **Send this to Claude:**
 
 ```text
-In 02-<name>, change the title card headline to "One command" instead of "One skill".
+In 02-<name>, change the title card headline to "<your new headline>", with "<one word>" highlighted.
 Re-make just that and rebuild.
 ```
 
-**What you should see:** Claude re-makes only the title card and updates the final video and project file. That takes seconds, not a whole re-edit.
+For example: *In 02-disable-skills, change the title card headline to "Turn off auto-firing skills", with "auto-firing" highlighted.*
+
+**What you should see:** after about 10 minutes, the new headline is in the video and the project file is updated. Claude re-runs only the steps after the change (graphics, captions, final video, project file). It doesn't re-cut, re-grade or re-transcribe, so it's much quicker than the 45-minute full edit. If your headline is long, Claude splits it over lines to follow your style guide's words-per-line rule and tells you.
 
 ---
 
